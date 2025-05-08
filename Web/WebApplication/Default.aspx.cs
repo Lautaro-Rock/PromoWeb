@@ -26,7 +26,7 @@ namespace WebApplication
 
                 if (acceso.Lectura.Read())
                 {
-                   
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Voucher Correcto');", true);
                 }
                 else
                 {
