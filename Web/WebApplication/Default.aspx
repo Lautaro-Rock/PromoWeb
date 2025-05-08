@@ -25,8 +25,9 @@
       <section class="row sectionFor d-flex justify-content-center">
      <div class="col-sm-12 col-md-12 col-lg-12 div-style">
          <h3 class="titleSection">¡Ingresa tu cupon en esta seccion!</h3>
-         <p class="textSection">Completa este paso para participar por increibles premios...</p>
+         <p class="textSection">Ingrese su voucher, para continuar al siguiente paso...</p>
          <asp:TextBox CssClass="button-style-voucher" ID="TextBox1" runat="server"></asp:TextBox>
+         <asp:Button CssClass="buttonNext my-4" ID="Button1" runat="server" Text="Continuar" />
      </div>
 
  </section>

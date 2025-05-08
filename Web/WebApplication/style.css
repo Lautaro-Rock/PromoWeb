@@ -146,6 +146,15 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+.buttonNext{
+    width: 70%;
+    height: 30px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 
 
 
