@@ -22,6 +22,16 @@
              <p class="textSection">Ingresa a nuestra app y canjea los vouchers por increíbles premios.</p>
          </div>
      </section>
+      <section class="row sectionFor d-flex justify-content-center">
+     <div class="col-sm-12 col-md-12 col-lg-12 div-style">
+         <h3 class="titleSection">¡Ingresa tu cupon en esta seccion!</h3>
+         <p class="textSection">Completa este paso para participar por increibles premios...</p>
+         <asp:TextBox CssClass="button-style-voucher" ID="TextBox1" runat="server"></asp:TextBox>
+     </div>
+
+ </section>
+
  </main>
+    
 
 </asp:Content>

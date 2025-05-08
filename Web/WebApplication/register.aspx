@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="WebApplication.WebForm1" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="WebApplication.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <main class="container">
     <section class="row">
         <div class="titleRegister mt-4">
-            <h2 class="h2Register mb-3">Formulario de registro VoucherWin</h2>
+            <h2 class="h2Register mb-3">Formulario de registro VoucherWin para participar</h2>
         </div>
         <div>
             <p class="textInfo">Bienvenido al formulario de registro, por favor complete los siguientes datos para registrarse en nuestro sitio web.</p>
@@ -43,7 +43,7 @@
     </div>
 </section>
     <div class="button-style my-4">
-      <asp:Button CssClass="button-register" ID="Button1" runat="server" Text="Registrarse"/>
+      <asp:Button CssClass="button-register" ID="Button1" runat="server" Text="Participar!"/>
     </div>
 </main>
 </asp:Content>
