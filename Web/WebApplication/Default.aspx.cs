@@ -13,5 +13,36 @@ namespace WebApplication
         {
 
         }
+
+        protected void Button_Click(object sender, EventArgs e)
+        {
+            string voucher = TextBox1.Text.Trim();
+            NegAccesData acceso = new NegAccesData();
+            try
+            {
+                acceso.PrepararConsulta("SELECT * FROM Vouchers WHERE CodigoVoucher=@codigo");
+                acceso.SetearParametro("@codigo", voucher);
+                acceso.EjecutarLectura();
+
+                if (acceso.Lectura.Read())
+                {
+                   
+                }
+                else
+                {
+                    Label1.Visible = true; 
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                acceso.CerrarConexion();
+            }
+
+        }
     }
 }

@@ -27,7 +27,8 @@
          <h3 class="titleSection">¡Ingresa tu cupon en esta seccion!</h3>
          <p class="textSection">Ingrese su voucher, para continuar al siguiente paso...</p>
          <asp:TextBox CssClass="button-style-voucher" ID="TextBox1" runat="server"></asp:TextBox>
-         <asp:Button CssClass="buttonNext my-4" ID="Button1" runat="server" Text="Continuar" />
+         <asp:Button CssClass="buttonNext my-4" Text="Continuar" runat="server" OnClick="Button_Click"/>
+        <asp:Label ForeColor="Red" ID="Label1" runat="server" Text="Error el voucher no se encuentra en la bases de datos" Visible="false"></asp:Label>
      </div>
 
  </section>
