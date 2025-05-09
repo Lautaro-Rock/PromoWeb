@@ -20,7 +20,7 @@ namespace WebApplication
             NegAccesData acceso = new NegAccesData();
             try
             {
-                acceso.PrepararConsulta("SELECT * FROM Vouchers WHERE CodigoVoucher=@codigo");
+                acceso.PrepararConsulta("SELECT * FROM Vouchers Where CodigoVoucher = @codigo AND FechaCanje IS NULL");
                 acceso.SetearParametro("@codigo", voucher);
                 acceso.EjecutarLectura();
 
