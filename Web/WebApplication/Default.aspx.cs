@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio; 
 
 namespace WebApplication
 {
@@ -17,14 +18,14 @@ namespace WebApplication
         protected void Button_Click(object sender, EventArgs e)
         {
             string voucher = TextBox1.Text.Trim();
-            NegAccesData acceso = new NegAccesData();
+            AccesoDatos acceso = new AccesoDatos();
             try
             {
-                acceso.PrepararConsulta("SELECT * FROM Vouchers Where CodigoVoucher = @codigo AND FechaCanje IS NULL");
-                acceso.SetearParametro("@codigo", voucher);
-                acceso.EjecutarLectura();
+                acceso.setearConsulta("SELECT * FROM Vouchers Where CodigoVoucher = @codigo AND FechaCanje IS NULL");
+                acceso.setearParametro("@codigo", voucher);
+                acceso.ejecutarLectura();
 
-                if (acceso.Lectura.Read())
+                if (acceso.ConexionDataReader.Read())
                 {
                     Response.Redirect("VentanaPremios.aspx"); 
                     
@@ -42,7 +43,7 @@ namespace WebApplication
             }
             finally
             {
-                acceso.CerrarConexion();
+                acceso.cerrarConexion();
             }
 
         }
