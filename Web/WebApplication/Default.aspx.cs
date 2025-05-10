@@ -27,9 +27,8 @@ namespace WebApplication
 
                 if (acceso.ConexionDataReader.Read())
                 {
-                    Response.Redirect("VentanaPremios.aspx"); 
-                    
-                    //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Voucher Correcto');", true);
+                    Response.Redirect("WebForm2.aspx"); 
+    
                 }
                 else
                 {

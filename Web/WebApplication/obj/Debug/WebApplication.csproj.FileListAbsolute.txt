@@ -220,3 +220,7 @@ C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\obj\Debug\W
 C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\obj\Debug\WebAppli.11721D13.Up2Date
 C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\obj\Debug\WebApplication.dll
 C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\obj\Debug\WebApplication.pdb
+C:\Users\Lauty\OneDrive\Escritorio\Proyecto PromoWEB\Web\WebApplication\bin\Dominio.dll
+C:\Users\Lauty\OneDrive\Escritorio\Proyecto PromoWEB\Web\WebApplication\bin\Negocio.dll
+C:\Users\Lauty\OneDrive\Escritorio\Proyecto PromoWEB\Web\WebApplication\bin\Dominio.pdb
+C:\Users\Lauty\OneDrive\Escritorio\Proyecto PromoWEB\Web\WebApplication\bin\Negocio.pdb

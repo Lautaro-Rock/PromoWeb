@@ -19,11 +19,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, A.IdMarca, M.Descripcion AS Marca, A.IdCategoria, C.Descripcion AS Categoria, I.Id AS IdImagen, I.ImagenUrl " +
-                    "FROM ARTICULOS A " +
-                    "LEFT JOIN MARCAS M ON A.IdMarca = M.Id " +
-                    "LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id " +
-                    "LEFT JOIN IMAGENES I ON A.Id = I.IdArticulo;");
+                datos.setearConsulta("Select A.Id, A.Nombre, A.Descripcion, A.Precio, IMG.ImagenUrl from ARTICULOS AS A INNER JOIN IMAGENES AS IMG ON A.Id=IMG.Id;");
                 datos.ejecutarLectura();
 
                 while (datos.ConexionDataReader.Read())
@@ -33,25 +29,8 @@ namespace Negocio
                     aux.Descripcion = datos.ConexionDataReader["Descripcion"] != DBNull.Value ? datos.ConexionDataReader["Descripcion"].ToString() : "";
                     aux.ID = (int)datos.ConexionDataReader["Id"];
                     aux.Precio = datos.ConexionDataReader["Precio"] != DBNull.Value ? Convert.ToDecimal(datos.ConexionDataReader["Precio"]) : 0m;
-                    aux.Codigo = datos.ConexionDataReader["Codigo"] != DBNull.Value ? datos.ConexionDataReader["Codigo"].ToString() : "";
-                    aux.UrlImagen = new Imagen();
-                    if (!(datos.ConexionDataReader["IdImagen"] is DBNull))
-                    {
-                        aux.UrlImagen.Id = (int)datos.ConexionDataReader["IdImagen"];
-                    }
-                    aux.UrlImagen.ImagenUrl = datos.ConexionDataReader["ImagenUrl"] != DBNull.Value ? datos.ConexionDataReader["ImagenUrl"].ToString() : "";
-                    aux.Marca = new Marca();
-                    if (!(datos.ConexionDataReader["IdMarca"] is DBNull))
-                    {
-                        aux.Marca.ID = (int)datos.ConexionDataReader["IdMarca"];
-                    }
-                    aux.Marca.Descripcion = datos.ConexionDataReader["Marca"] != DBNull.Value ? datos.ConexionDataReader["Marca"].ToString() : "";
-                    aux.Categoria = new Categoria();
-                    if (!(datos.ConexionDataReader["IdCategoria"] is DBNull))
-                    {
-                        aux.Categoria.ID = (int)datos.ConexionDataReader["IdCategoria"];
-                    }
-                    aux.Categoria.Descripcion = datos.ConexionDataReader["Categoria"] != DBNull.Value ? datos.ConexionDataReader["Categoria"].ToString() : "";
+                    aux.ImagenUrl = datos.ConexionDataReader["ImagenUrl"] != DBNull.Value ? datos.ConexionDataReader["ImagenUrl"].ToString() : "";
+
 
                     lista.Add(aux);
 
