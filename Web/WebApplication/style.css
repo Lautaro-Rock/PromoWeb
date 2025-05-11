@@ -160,13 +160,7 @@
 }
 
 
-#tit_sel_premio {
-    font-size: 50px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-    letter-spacing: 2px;
-    text-align: center;
-    color: black;
-}
+
 
 .contenedor_tarjetas {
     display: grid;
@@ -201,3 +195,4 @@
 max-width: 100px; 
 margin-bottom: 15px;
     }
+

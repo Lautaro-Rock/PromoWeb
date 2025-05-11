@@ -228,3 +228,7 @@ C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\bin\Dominio
 C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\bin\Negocio.dll
 C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\bin\Dominio.pdb
 C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\bin\Negocio.pdb
+C:\Users\Marcos\Desktop\ProyectoAppWeb\PromoWeb\Web\WebApplication\bin\Dominio.dll
+C:\Users\Marcos\Desktop\ProyectoAppWeb\PromoWeb\Web\WebApplication\bin\Negocio.dll
+C:\Users\Marcos\Desktop\ProyectoAppWeb\PromoWeb\Web\WebApplication\bin\Dominio.pdb
+C:\Users\Marcos\Desktop\ProyectoAppWeb\PromoWeb\Web\WebApplication\bin\Negocio.pdb
