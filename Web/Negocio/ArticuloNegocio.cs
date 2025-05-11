@@ -19,7 +19,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("Select A.Id, A.Nombre, A.Descripcion, A.Precio, IMG.ImagenUrl from ARTICULOS AS A INNER JOIN IMAGENES AS IMG ON A.Id=IMG.Id;");
+                datos.setearConsulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, IMG.ImagenUrl from ARTICULOS A INNER JOIN IMAGENES IMG ON A.Id=IMG.IdArticulo ORDER BY A.Id");
                 datos.ejecutarLectura();
 
                 while (datos.ConexionDataReader.Read())

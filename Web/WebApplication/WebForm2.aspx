@@ -1,24 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="WebApplication.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:GridView CssClass="table table-bordered my-5 w-75 mx-auto table-sm" runat="server" ID="dgvArticulos" AutoGenerateColumns="false">
-        <Columns>
-            <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
-            <asp:BoundField HeaderText="Descripcion" DataField="Descripcion"/>
-            <asp:BoundField HeaderText="Precio" DataField="Precio"/>
-            <asp:TemplateField HeaderText="Imagen">
-            <ItemTemplate>
-           <asp:Image CssClass="" ID="imgArticulo" runat="server" ImageUrl='<%# Eval("ImagenUrl") %>' Width="100px" Height="100px" />
-           </ItemTemplate>
-          </asp:TemplateField>
-         <asp:TemplateField HeaderText="Acción">
-            <ItemTemplate>
-                <asp:Button ID="btnVerDetalles" runat="server" Text="¡Quiero Este!" 
-                        CommandName="VerDetalles" 
-                        CommandArgument='<%# Eval("Id") %>' 
-                        CssClass="btn btn-sm btn-primary mt-4"/>
-            </ItemTemplate>
-        </asp:TemplateField>
-        </Columns>
-    </asp:GridView>
+
+ <div class="row row-cols-1 row-cols-md-3 g-4"> 
+
+    <asp:Repeater runat="server" ID="repArticulos">
+        <ItemTemplate>
+            <div class="card">
+                <img src="<%#Eval("ImagenUrl") %>" class="card-img-top" alt="Articulo" style="width: 200px; margin: 5px;"/>
+                <div class="card-body">
+                    <h5 class="card-title"><%# Eval("Nombre") %></h5>
+                    <p class="card-text"><%# Eval("Descripcion") %></p>
+                    <asp:Button ID="btnCambiarImagen" runat="server" Text="Cambiar Imagen" CommandName="CambiarImagen" CommandArgument='<%#Eval("ID") %>' CssClass="btn btn-primary" OnClick="btnCambiarImagen_Click"/>
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater>
+
+</div>
 </asp:Content>
 

@@ -224,3 +224,7 @@ C:\Users\Lauty\OneDrive\Escritorio\Proyecto PromoWEB\Web\WebApplication\bin\Domi
 C:\Users\Lauty\OneDrive\Escritorio\Proyecto PromoWEB\Web\WebApplication\bin\Negocio.dll
 C:\Users\Lauty\OneDrive\Escritorio\Proyecto PromoWEB\Web\WebApplication\bin\Dominio.pdb
 C:\Users\Lauty\OneDrive\Escritorio\Proyecto PromoWEB\Web\WebApplication\bin\Negocio.pdb
+C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\bin\Dominio.dll
+C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\bin\Negocio.dll
+C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\bin\Dominio.pdb
+C:\Users\joasa\OneDrive\Desktop\Repo TP4\PromoWeb\Web\WebApplication\bin\Negocio.pdb
