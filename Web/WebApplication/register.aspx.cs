@@ -27,17 +27,29 @@ namespace WebApplication
             AccesoDatos accesso = new AccesoDatos();
             try
             {
-                accesso.setearConsulta("INSERT INTO Clientes(Documento,Nombre,Apellido,Email,Direccion,Ciudad,CP)"+
-                "VALUES(@Documento,@Nombre,@Apellido,@Email,@Direccion,@Ciudad,@CP);");
+                accesso.setearConsulta("SELECT * FROM Clientes WHERE Documento=@Documento");
                 accesso.setearParametro("@Documento", documento);
-                accesso.setearParametro("@Nombre", nombre);
-                accesso.setearParametro("@Apellido", apellido);
-                accesso.setearParametro("@Email", email);
-                accesso.setearParametro("@Direccion", direccion);
-                accesso.setearParametro("@Ciudad", ciudad);
-                accesso.setearParametro("@CP", cpp);
-                accesso.ejecutarAccion();
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Usuario creado correctamente');", true);
+                accesso.ejecutarLectura();
+                if (accesso.ConexionDataReader.Read())
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El usuario ya existe');", true);
+                    return;
+                }
+                else
+                {
+                    accesso.setearConsulta("INSERT INTO Clientes(Documento,Nombre,Apellido,Email,Direccion,Ciudad,CP)" +
+                    "VALUES(@Documento,@Nombre,@Apellido,@Email,@Direccion,@Ciudad,@CP);");
+                    accesso.setearParametro("@Documento", documento);
+                    accesso.setearParametro("@Nombre", nombre);
+                    accesso.setearParametro("@Apellido", apellido);
+                    accesso.setearParametro("@Email", email);
+                    accesso.setearParametro("@Direccion", direccion);
+                    accesso.setearParametro("@Ciudad", ciudad);
+                    accesso.setearParametro("@CP", cpp);
+                    accesso.ejecutarAccion();
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Usuario creado correctamente');", true);
+                }
+               
             }
             catch (Exception)
             {
