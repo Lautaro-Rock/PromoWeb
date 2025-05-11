@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
+using Microsoft.AspNet.FriendlyUrls;
 using Negocio;
 
 namespace WebApplication
@@ -69,6 +70,12 @@ namespace WebApplication
                 // Actualizar el índice actual en el atributo del botón
                 btn.Attributes["data-index"] = nextIndex.ToString();
             }
+        }
+
+        protected void btnElegirArticulo_Click(object sender, EventArgs e)
+        {
+            int idArticulo = Convert.ToInt32(((Button)sender).CommandArgument);
+            Response.Redirect("register.aspx?ID=" +idArticulo, false);
         }
     }
 }
