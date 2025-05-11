@@ -21,13 +21,13 @@ namespace Negocio
             try
             {
                 datos.setearConsulta(@"
-            SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio,
-                   STRING_AGG(IMG.ImagenUrl, '|') AS Imagenes
-            FROM ARTICULOS A
-            INNER JOIN IMAGENES IMG ON A.Id = IMG.IdArticulo
-            GROUP BY A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio
-            ORDER BY A.Id
-        ");
+                    SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio,
+                    STRING_AGG(IMG.ImagenUrl, '|') AS Imagenes
+                    FROM ARTICULOS A
+                    INNER JOIN IMAGENES IMG ON A.Id = IMG.IdArticulo
+                    GROUP BY A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio
+                    ORDER BY A.Id
+                ");
                 datos.ejecutarLectura();
 
                 while (datos.ConexionDataReader.Read())

@@ -33,8 +33,16 @@ namespace WebApplication
 
         protected void btnElegirArticulo_Click(object sender, EventArgs e)
         {
-            int idArticulo = Convert.ToInt32(((Button)sender).CommandArgument);
-            Response.Redirect("register.aspx?ID=" +idArticulo, false);
+            if (Request.QueryString["voucher"] != null)
+            {
+                string voucher = Request.QueryString["voucher"].ToString();
+                int idArticulo = Convert.ToInt32(((Button)sender).CommandArgument);
+                Response.Redirect("register.aspx?ID=" +idArticulo +"&voucher=" +voucher, false);
+            } else
+            {
+                Response.Redirect("Default.aspx", false);
+                return; 
+            }
         }
     }
 }

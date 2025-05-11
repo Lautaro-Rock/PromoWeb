@@ -27,7 +27,7 @@ namespace WebApplication
 
                 if (acceso.ConexionDataReader.Read())
                 {
-                    Response.Redirect("WebForm2.aspx"); 
+                    Response.Redirect("WebForm2.aspx?voucher="+voucher, false); 
     
                 }
                 else
