@@ -12,6 +12,51 @@ namespace Negocio
 {
     public class ArticuloNegocio
     {
+
+        public List<Articulo> listarr()
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta(@"
+            SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio,
+                   STRING_AGG(IMG.ImagenUrl, '|') AS Imagenes
+            FROM ARTICULOS A
+            INNER JOIN IMAGENES IMG ON A.Id = IMG.IdArticulo
+            GROUP BY A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio
+            ORDER BY A.Id
+        ");
+                datos.ejecutarLectura();
+
+                while (datos.ConexionDataReader.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.ID = (int)datos.ConexionDataReader["Id"];
+                    aux.Nombre = datos.ConexionDataReader["Nombre"] != DBNull.Value ? datos.ConexionDataReader["Nombre"].ToString() : "";
+                    aux.Descripcion = datos.ConexionDataReader["Descripcion"] != DBNull.Value ? datos.ConexionDataReader["Descripcion"].ToString() : "";
+                    aux.Precio = datos.ConexionDataReader["Precio"] != DBNull.Value ? Convert.ToDecimal(datos.ConexionDataReader["Precio"]) : 0m;
+                    aux.ImagenUrl = datos.ConexionDataReader["Imagenes"] != DBNull.Value ? datos.ConexionDataReader["Imagenes"].ToString() : "";
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
+
+
         public List<Articulo> listar()
         {
             List<Articulo> lista = new List<Articulo>();
