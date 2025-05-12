@@ -38,7 +38,7 @@ namespace WebApplication
             catch (Exception ex)
             {
 
-                throw ex;
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Error: {ex.Message}');", true);
             }
             finally
             {
