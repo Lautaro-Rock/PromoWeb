@@ -18,7 +18,7 @@
         </div>
         <div class="form-groupOne  col-lg-4 col-md-4 col-sm-12 mb-2">
             <p class="textOneRegister">Documento:</p>
-            <asp:TextBox CssClass="input-style" ID="dniBox" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="input-style" ID="dniBox" runat="server" AutoPostBack="true" OnTextChanged="dniBox_TextChanged" ></asp:TextBox>
         </div>
     </section>
     <br />

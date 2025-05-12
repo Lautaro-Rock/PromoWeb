@@ -69,5 +69,43 @@ namespace WebApplication
             }
 
         }
+
+        protected void dniBox_TextChanged(object sender, EventArgs e)
+        {
+            int documento = int.Parse(dniBox.Text);
+
+            AccesoDatos acceso = new AccesoDatos();
+            try
+            {
+                // Consulta para verificar si el documento ya existe
+                acceso.setearConsulta("SELECT * FROM Clientes WHERE Documento = @Documento");
+                acceso.setearParametro("@Documento", documento);
+                acceso.ejecutarLectura();
+
+                if (acceso.ConexionDataReader.Read())
+                {
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El documento ya está registrado, cargando datos.');", true);
+                        dniBox.Text = acceso.ConexionDataReader["Documento"] != DBNull.Value ? acceso.ConexionDataReader["Documento"].ToString() : "";
+                        nombreBox.Text = acceso.ConexionDataReader["Nombre"] != DBNull.Value ? acceso.ConexionDataReader["Nombre"].ToString() : "";
+                        apellidoBox.Text = acceso.ConexionDataReader["Apellido"] != DBNull.Value ? acceso.ConexionDataReader["Apellido"].ToString() : "";
+                        emailBox.Text = acceso.ConexionDataReader["Email"] != DBNull.Value ? acceso.ConexionDataReader["Email"].ToString() : "";
+                        direBox.Text = acceso.ConexionDataReader["Direccion"] != DBNull.Value ? acceso.ConexionDataReader["Direccion"].ToString() : "";
+                        ciudadBox.Text = acceso.ConexionDataReader["Ciudad"] != DBNull.Value ? acceso.ConexionDataReader["Ciudad"].ToString() : "";
+                        cpBox.Text = acceso.ConexionDataReader["CP"] != DBNull.Value ? acceso.ConexionDataReader["CP"].ToString() : "";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Error: {ex.Message}');", true);
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
+
+        }
     }
 }

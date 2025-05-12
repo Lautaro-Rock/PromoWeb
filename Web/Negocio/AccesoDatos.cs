@@ -18,7 +18,7 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=PROMOS_DB; integrated security=true");
+            conexion = new SqlConnection("server=localhost; database=PROMOS_DB; Persist Security Info=True; User ID= sa; Password=Contra993!");
             conexionCommand = new SqlCommand();
         }
         public void setearConsulta(string consulta)
