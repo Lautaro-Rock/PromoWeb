@@ -49,9 +49,9 @@ namespace WebApplication
                         accesso.setearParametro("@Voucher", voucher);
                         accesso.setearParametro("@Fecha", fechaActual);
                         accesso.ejecutarAccion();
-                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Usuario creado correctamente');", true);
-                    
-               
+                    Response.Redirect("VentanaRegistroExitoso.aspx");
+
+
                 }
                 catch (Exception)
                 {
